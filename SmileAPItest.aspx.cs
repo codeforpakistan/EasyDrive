@@ -15,9 +15,9 @@ public partial class SmileAPItest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SMSSession session = GetSession();
-        SendSMS(session, "03335762307", "sample text form easy drive");
-        ALLReciveMessage allmessages = ReciveSMS(session);
+        //SMSSession session = GetSession();
+        //SendSMS(session, "03335762307", "sample text form easy drive");
+        //ALLReciveMessage allmessages = ReciveSMS(session);
     }
 
 
