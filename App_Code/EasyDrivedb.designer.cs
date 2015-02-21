@@ -411,7 +411,7 @@ public partial class Checkin : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Checkin", Storage="_Users", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Checkin", Storage="_Users", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
 	public Users Users
 	{
 		get
@@ -772,7 +772,7 @@ public partial class Schedule : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Schedule", Storage="_Users", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Schedule", Storage="_Users", ThisKey="User_ID", OtherKey="User_ID", IsForeignKey=true)]
 	public Users Users
 	{
 		get
@@ -994,7 +994,7 @@ public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Checkin", Storage="_Checkins", ThisKey="User_ID", OtherKey="User_ID")]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Checkin", Storage="_Checkins", ThisKey="User_ID", OtherKey="User_ID")]
 	public EntitySet<Checkin> Checkins
 	{
 		get
@@ -1007,7 +1007,7 @@ public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Schedule", Storage="_Schedules", ThisKey="User_ID", OtherKey="User_ID")]
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Users_Schedule", Storage="_Schedules", ThisKey="User_ID", OtherKey="User_ID")]
 	public EntitySet<Schedule> Schedules
 	{
 		get
