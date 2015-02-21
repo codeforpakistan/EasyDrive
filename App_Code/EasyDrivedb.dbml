@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ezdrivedb" Class="EasyDrivedbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=QUREU6798PAKL\MSSQLEXPRESS;Initial Catalog=ezdrivedb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ezdrivedbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Checkin" Member="Checkins">
+    <Type Name="Checkin">
+      <Column Name="Checkin_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Long" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Severity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SpamCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Side" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CheckinType_Checkin" Member="CheckinType" ThisKey="Type_ID" OtherKey="Type_ID" Type="CheckinType" IsForeignKey="true" />
+      <Association Name="User_Checkin" Member="Users" ThisKey="User_ID" OtherKey="User_ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CheckinType" Member="CheckinTypes">
+    <Type Name="CheckinType">
+      <Column Name="Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CheckinType_Checkin" Member="Checkins" ThisKey="Type_ID" OtherKey="Type_ID" Type="Checkin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedule" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="Schedule_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartPoint" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EndPoint" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TimeEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Recurrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Schedule" Member="Users" ThisKey="User_ID" OtherKey="User_ID" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VerificationCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Checkin" Member="Checkins" ThisKey="User_ID" OtherKey="User_ID" Type="Checkin" />
+      <Association Name="User_Schedule" Member="Schedules" ThisKey="User_ID" OtherKey="User_ID" Type="Schedule" />
+    </Type>
+  </Table>
+</Database>

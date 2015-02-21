@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9" name="EasyDrivedb">
+  <DataContextMoniker Name="/EasyDrivedbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="981c556c-be6a-42b4-905e-e59101c3afaf" absoluteBounds="2.875, 2, 2, 2.9448470623294511">
+      <DataClassMoniker Name="/EasyDrivedbDataContext/Checkin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f7993d7-c584-4cbb-8a38-eb015af0eff3" absoluteBounds="2.89, 2.46, 1.9700000000000002, 2.3848470623294511" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3e72850-5872-45bf-94db-6b5893d5edc1" absoluteBounds="2.875, 7.375, 2, 1.2586491059263547">
+      <DataClassMoniker Name="/EasyDrivedbDataContext/CheckinType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbca38d9-437d-47e9-bc88-a7737b16364f" absoluteBounds="2.8899999999999997, 7.835, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 7.375); (3.875 : 4.94484706232945)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EasyDrivedbDataContext/CheckinType/CheckinType_Checkin" />
+      <nodes>
+        <classShapeMoniker Id="d3e72850-5872-45bf-94db-6b5893d5edc1" />
+        <classShapeMoniker Id="981c556c-be6a-42b4-905e-e59101c3afaf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3febea5f-2441-45c3-bd9a-f4513f34e3b6" absoluteBounds="5.375, 6.375, 2, 2.31252282867829">
+      <DataClassMoniker Name="/EasyDrivedbDataContext/Schedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4593663-3159-44b9-acdb-40c145adfc25" absoluteBounds="5.39, 6.835, 1.9700000000000002, 1.75252282867829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70e4bc3f-523e-42eb-b356-2e21446f0c8a" absoluteBounds="6.625, 2.875, 2, 2.101748084127903">
+      <DataClassMoniker Name="/EasyDrivedbDataContext/Users" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8caa6447-fd71-4924-8cd2-9c00bdddd44f" absoluteBounds="6.6400000000000006, 3.335, 1.9700000000000002, 1.541748084127903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 3.90992353116473); (4.875 : 3.90992353116473)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EasyDrivedbDataContext/Users/User_Checkin" />
+      <nodes>
+        <classShapeMoniker Id="70e4bc3f-523e-42eb-b356-2e21446f0c8a" />
+        <classShapeMoniker Id="981c556c-be6a-42b4-905e-e59101c3afaf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7 : 4.9767480841279); (7 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EasyDrivedbDataContext/Users/User_Schedule" />
+      <nodes>
+        <classShapeMoniker Id="70e4bc3f-523e-42eb-b356-2e21446f0c8a" />
+        <classShapeMoniker Id="3febea5f-2441-45c3-bd9a-f4513f34e3b6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
