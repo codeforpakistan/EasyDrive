@@ -14,13 +14,9 @@
                     <div class="form">
                         <h3>Login</h3>
                         <form method="post" action="#">
-                            <input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name ';}">
-                            <input type="text" class="textbox" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
-                            <input type="text" class="textbox" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+                            <input type="text" class="textbox" name="loginmobile" required  placeholder="Mobile">
+                            <input type="text" class="textbox" name="loginpassword" required placeholder="Password">
                             <div class="clearfix"></div>
-                            <div>
-                                <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message ';}">Your Message</textarea>
-                            </div>
                             <div class="submit">
                                 <input type="submit" value="Login" />
                             </div>
@@ -30,14 +26,11 @@
                 <div class="col-md-6 contact-part">
                     <div class="form">
                         <h3>Not a user? Register</h3>
-                        <form method="post" action="#">
-                            <input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name ';}">
-                            <input type="text" class="textbox" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
-                            <input type="text" class="textbox" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+                        <form method="post" action="usersignup.aspx" name="signupform">
+                            <input type="text" class="textbox" name="signupname" required placeholder="Name" >
+                            <input type="text" class="textbox" name="signupmobile" required placeholder="Mobile">
+                            <input type="text" class="textbox" name="signuppassword" required placeholder="Password">
                             <div class="clearfix"></div>
-                            <div>
-                                <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message ';}">Your Message</textarea>
-                            </div>
                             <div class="submit">
                                 <input type="submit" value="Register" />
                             </div>
