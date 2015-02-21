@@ -286,6 +286,8 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+    height: 26px;
+    width: 147px;
 }
 a {
   color: #1B242F;

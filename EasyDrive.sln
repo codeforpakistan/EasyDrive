@@ -25,6 +25,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EasyDrive", "http://localho
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EasyDrive", "http://localhost:46061", "{48011531-99D4-40C2-9296-20679CE405E7}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_46061"
+		Debug.AspNetCompiler.PhysicalPath = "..\EasyDrive\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_46061\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_46061"
+		Release.AspNetCompiler.PhysicalPath = "..\EasyDrive\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_46061\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\EasyDrive\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +53,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9264D93A-B4CA-4F9A-8648-A8604E3A9B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9264D93A-B4CA-4F9A-8648-A8604E3A9B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48011531-99D4-40C2-9296-20679CE405E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48011531-99D4-40C2-9296-20679CE405E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
