@@ -1,0 +1,58 @@
+﻿#map-canvas { 
+    height: 600px; 
+    margin: 0; 
+    padding: 0;
+}
+
+.labelsred {
+    color: white;
+    background-color: #fc6355;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 10px;     
+    white-space: nowrap;
+}
+.labelspurple {
+    color: white;
+    background-color: #7e55fc;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 10px;     
+    white-space: nowrap;
+}
+.labelsblue {
+    color: white;
+    background-color: #5781fc;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 10px;     
+    white-space: nowrap;
+}
+.labelsgreen {
+    color: white;
+    background-color: #00e13c;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 10px;     
+    white-space: nowrap;
+}
+.labelsyellow {
+    color: white;
+    background-color: #fcf357;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 10px;     
+    white-space: nowrap;
+}
+
+
+#sidePanel {
+    background-color: black;
+    color: #ffd400;
+    height: 600px;
+}

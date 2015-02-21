@@ -8,12 +8,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html>
-<head>
+<head runat="server">
     <title>EasyDrive</title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
     <!-- Custom Theme files -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/easydrive.css" rel='stylesheet' type='text/css' />
     <!--Custom Theme files-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -25,6 +26,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3fN6zR3Iv0_Z20ZfPS9ZYpUKaRsRx4Oo">
+    </script>
+    <script src="js/markerwithlabel.js"></script>
     <script src="js/easydrive.js"></script>
 
     <script type="text/javascript">
