@@ -10,10 +10,14 @@ public partial class Map : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string inner = InitializeMap("33.693", "73.067");
-        inner += CreateMarker("marker", "33.693", "73.067", "Hello World", "1", ReasonTypes.Accident, UserTypes.Admin);
-        inner += CreateMarker("marker2", "34.693", "73.067", "Hello World", "2", ReasonTypes.Accident, UserTypes.Admin);
-        inner += CreateMarker("marker2", "33.693", "73.069", "Hello World", "3", ReasonTypes.Clear, UserTypes.User);
+        string message = GetInfoWindowString(ReasonTypes.Accident, SeverityType.Severe, "11:45:00PM", "1111");
+        inner += CreateMarker("marker", "33.693", "73.067", message, "1", ReasonTypes.Accident, UserTypes.Admin);
 
+        //message = GetInfoWindowString(ReasonTypes.Clear, SeverityType.Mild, "11:45:00PM", "1111");
+        inner += CreateMarker("marker2", "34.693", "73.067", message, "2", ReasonTypes.Accident, UserTypes.Admin);
+
+        //message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
+        inner += CreateMarker("marker2", "33.693", "73.069", message, "3", ReasonTypes.Clear, UserTypes.User);
 
         inner += TapMap();
         string script = "function initialize() {" + inner + "}google.maps.event.addDomListener(window, 'load', initialize);";
@@ -44,6 +48,32 @@ public partial class Map : System.Web.UI.Page
                     alert(latLng);
                     document.getElementbyId
                 });" + Environment.NewLine;
+    }
+
+    private string GetInfoWindowString(int reasonType, int severityType, string time, string postId)
+    {
+        string reason = "Unknown";
+        string severity = "Mild";
+        
+        if (reasonType == ReasonTypes.Clear)
+            reason = "Clear";
+
+        else if (reasonType == ReasonTypes.Accident)
+            reason = "Accident";
+        
+        else if (reasonType == ReasonTypes.Standstill)
+            reason = "Standstill";
+        
+        else if (reasonType == ReasonTypes.Signal)
+            reason = "Signal";
+
+        if (severityType == SeverityType.Normal)
+            severity = "Normal";
+
+        else if (severityType == SeverityType.Severe)
+            severity = "Severe";
+
+        return "<div>" + "<p>Reason: " + reason + "</p><p>Severity: " + severity + "</p><p>Time: " + time + "</p><br /><a id=\"" + postId + "\">Report as spam</a></div>";
     }
 
     private string _InitializeLatlangVariable(string variableName, string Latitude, string Longitude)
