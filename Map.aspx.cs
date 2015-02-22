@@ -17,13 +17,13 @@ public partial class Map : System.Web.UI.Page
         inner += CreateMarker("marker2", "34.693", "73.067", message, "5", ReasonTypes.Accident, UserTypes.Admin);
 
         message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
-        inner += CreateMarker("marker2", "33.693", "73.069", message, "1", ReasonTypes.Clear, UserTypes.User);
+        inner += CreateMarker("marker3", "33.693", "73.069", message, "1", ReasonTypes.Clear, UserTypes.User);
 
         message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
-        inner += CreateMarker("marker2", "33.693", "73.068", message, "2", ReasonTypes.Clear, UserTypes.Admin);
+        inner += CreateMarker("marker4", "33.693", "73.068", message, "2", ReasonTypes.Clear, UserTypes.Admin);
 
         message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
-        inner += CreateMarker("marker2", "33.692", "73.069", message, "4", ReasonTypes.Standstill, UserTypes.Admin);
+        inner += CreateMarker("marker5", "33.692", "73.069", message, "4", ReasonTypes.Standstill, UserTypes.Admin);
 
         inner += TapMap();
         string script = "function initialize() {" + inner + "}google.maps.event.addDomListener(window, 'load', initialize);";
