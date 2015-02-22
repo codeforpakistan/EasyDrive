@@ -13,16 +13,16 @@ public partial class Map : System.Web.UI.Page
         string message = GetInfoWindowString(ReasonTypes.Accident, SeverityType.Severe, "11:45:00PM", "1111");
         inner += CreateMarker("marker", "33.693", "73.067", message, "3", ReasonTypes.Accident, UserTypes.Admin);
 
-        message = GetInfoWindowString(ReasonTypes.Clear, SeverityType.Mild, "11:45:00PM", "1111");
+        message = GetInfoWindowString(ReasonTypes.Accident, SeverityType.Mild, "11:45:00PM", "1111");
         inner += CreateMarker("marker2", "34.693", "73.067", message, "5", ReasonTypes.Accident, UserTypes.Admin);
 
-        message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
+        message = GetInfoWindowString(ReasonTypes.Clear, SeverityType.Normal, "11:45:00PM", "1111");
         inner += CreateMarker("marker3", "33.693", "73.069", message, "1", ReasonTypes.Clear, UserTypes.User);
 
-        message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
+        message = GetInfoWindowString(ReasonTypes.Clear, SeverityType.Normal, "11:45:00PM", "1111");
         inner += CreateMarker("marker4", "33.693", "73.068", message, "2", ReasonTypes.Clear, UserTypes.Admin);
 
-        message = GetInfoWindowString(ReasonTypes.Unknown, SeverityType.Normal, "11:45:00PM", "1111");
+        message = GetInfoWindowString(ReasonTypes.Standstill, SeverityType.Normal, "11:45:00PM", "1111");
         inner += CreateMarker("marker5", "33.692", "73.069", message, "4", ReasonTypes.Standstill, UserTypes.Admin);
 
         inner += TapMap();
