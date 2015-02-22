@@ -17,11 +17,11 @@ public class SmileAPIClient
     private const string URL = "http://api.smilesn.com/session";
     private string urlParameters = "?username=10&password=tree8531";
 
-	public SmileAPIClient()
-	{
-	}
+    public SmileAPIClient()
+    {
+    }
 
-    private SMSSession GetSession()
+    public SMSSession GetSession()
     {
         string url = URL + urlParameters;
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -36,7 +36,7 @@ public class SmileAPIClient
             return null;
     }
 
-    private bool SendSMS(SMSSession session, string receivenum, string textmessage)
+    public bool SendSMS(SMSSession session, string receivenum, string textmessage)
     {
         string url = "http://api.smilesn.com/sendsms?sid=" + session.sessionid + "&receivenum=" + receivenum + "&sendernum=8333&textmessage=" + textmessage;
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -49,7 +49,7 @@ public class SmileAPIClient
             return false;
     }
 
-    private ALLReciveMessage ReciveSMS(SMSSession session)
+    public ALLReciveMessage ReciveSMS(SMSSession session)
     {
         string url = "http://api.smilesn.com/receivesms?sid=" + session.sessionid;
         ALLReciveMessage allmessages = new ALLReciveMessage();
