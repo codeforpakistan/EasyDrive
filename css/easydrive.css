@@ -22,3 +22,30 @@
 .yellowColor {
     color: #ffd400;
 }
+.infowindow {
+    color: #444;
+}
+/* http://stackoverflow.com/questions/7616666/google-maps-api-v3-custom-styles-for-infowindow */
+#appbar {
+        min-height: 200px;
+    background-color: #444;
+}
+.yellowbutton {
+    font-family: "Open Sans", sans-serif;
+    background: #ffd400;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.75em 1em;
+    display: inline-block;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    letter-spacing: 0.1em;
+    border: 2px solid#ffd400;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    width: 35%;
+}

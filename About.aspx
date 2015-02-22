@@ -5,7 +5,7 @@
     <div class="contact" id="contact">
         <div class="contact-head">
             <div class="container">
-                <h3>About</h3>
+                <h3></h3>
             </div>
         </div>
         <div class="contact-content">
