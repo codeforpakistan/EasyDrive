@@ -10,11 +10,8 @@
         </div>
         <div class="contact-content">
             <div class="container">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div id="map-canvas"></div>
-                </div>
-                <div class="col-md-2" id="sidePanel">
-                    
                 </div>
                 <div class="clear"></div>
             </div>

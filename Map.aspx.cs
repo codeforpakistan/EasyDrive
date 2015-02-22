@@ -10,8 +10,9 @@ public partial class Map : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string inner = InitializeMap("33.693", "73.067");
-        inner += CreateMarker("marker", "33.693", "73.067", "Hello World", "1", 1);
-        inner += CreateMarker("marker2", "34.693", "73.067", "Hello World", "2", 2);
+        inner += CreateMarker("marker", "33.693", "73.067", "Hello World", "1", ReasonTypes.Accident, UserTypes.Admin);
+        inner += CreateMarker("marker2", "34.693", "73.067", "Hello World", "2", ReasonTypes.Accident, UserTypes.Admin);
+        inner += CreateMarker("marker2", "33.693", "73.069", "Hello World", "3", ReasonTypes.Clear, UserTypes.User);
 
 
         inner += TapMap();
@@ -31,9 +32,9 @@ public partial class Map : System.Web.UI.Page
                     mapOptions);" + Environment.NewLine;
     }
 
-    private string CreateMarker(string markerVariableName, string latitude, string longitude, string messageString, string innerLabel, int type)
+    private string CreateMarker(string markerVariableName, string latitude, string longitude, string messageString, string innerLabel, int reasonType, int userType)
     {
-        return _InitializeLatlangVariable("latlng" + markerVariableName, latitude, longitude) + _InitializeInfoWindow("infowindow" + markerVariableName, messageString) + _ShowMarker(markerVariableName, "latlng" + markerVariableName, innerLabel, type) + _SetMarkerClick(markerVariableName);
+        return _InitializeLatlangVariable("latlng" + markerVariableName, latitude, longitude) + _InitializeInfoWindow("infowindow" + markerVariableName, messageString) + _ShowMarker(markerVariableName, "latlng" + markerVariableName, innerLabel, reasonType, userType) + _SetMarkerClick(markerVariableName);
     }
 
     private string TapMap()
@@ -57,24 +58,28 @@ public partial class Map : System.Web.UI.Page
                 });" + Environment.NewLine;
     }
 
-    private string _ShowMarker(string variableName, string latLngVariableName, string innerLabel, int type)
+    private string _ShowMarker(string variableName, string latLngVariableName, string innerLabel, int type, int usertype)
     {
         string icon = "images/pinred.png";
-        string labelClass = "labelsred";
+        string position = "6, 40";
 
         if (type == ReasonTypes.Clear)
-        {
             icon = "images/pingreen.png";
-            labelClass = "labelsgreen";
-        }
 
+
+        if (usertype == UserTypes.Admin)
+        {
+            icon = icon.Split('.')[0] + "police." + icon.Split('.')[1];
+            position = "6, 25";
+        }
+            
         return Environment.NewLine + @"var " + variableName + @" = new MarkerWithLabel({
             position: " + latLngVariableName + @",
             map: map,
             labelContent: '" + innerLabel + @"',
-            labelAnchor: new google.maps.Point(5, 29),
+            labelAnchor: new google.maps.Point(" + position + @"),
             icon: '" + icon + @"',
-            labelClass: '" + labelClass + @"', // the CSS class for the label
+            labelClass: 'labels', // the CSS class for the label
             labelInBackground: false
         });" + Environment.NewLine;
     }

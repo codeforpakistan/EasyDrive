@@ -64,7 +64,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <span class="menu two"></span>
                 <ul>
                     <li><a href="Default.aspx">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="Schedule.aspx">Schedule</a></li>
+                    <li><a href="About.aspx">About Us</a></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
